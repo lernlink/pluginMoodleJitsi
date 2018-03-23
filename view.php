@@ -88,10 +88,15 @@ $nom=$USER->username;
 $ses=$course->shortname."-".$jitsi->name;
 $urlSes=$CFG->wwwroot.'/mod/jitsi/sesion.php?nom='.$nom.'&ses='.$ses;
 
-echo $OUTPUT->box(get_string('instruction', 'jitsi'));
+$today = getdate();
 
-echo $OUTPUT->single_button(new moodle_url('/mod/jitsi/sesion.php', $urlparams), get_string('access', 'jitsi'), 'post');
+if ($today[0]>($jitsi->timeopen-1800)){
+  echo $OUTPUT->box(get_string('instruction', 'jitsi'));
 
+  echo $OUTPUT->single_button(new moodle_url('/mod/jitsi/sesion.php', $urlparams), get_string('access', 'jitsi'), 'post}}');
+}else{
+  echo $OUTPUT->box(get_string('nostart', 'jitsi'));
+}
 
 
 // Finish the page.

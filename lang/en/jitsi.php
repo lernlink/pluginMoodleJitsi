@@ -44,3 +44,4 @@ $string['instruction'] = 'Click the button to acces';
 $string['access'] = 'Access';
 $string['calendarstart'] = 'The videoconference \'{$a}\' start';
 $string['allow'] = 'Start of videoconference';
+$string['nostart'] = 'The session has not started. You can access 30 minutes before the start';
