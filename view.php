@@ -77,16 +77,17 @@ echo $OUTPUT->header();
 
 echo $OUTPUT->heading($jitsi->name);
 
-$urlparams = array('userid' => $USER->id ,'nom' => $USER->username, 'ses'=>$course->shortname."-".$jitsi->name);
 
 // Conditions to show the intro can change to look for own settings or whatever.
 if ($jitsi->intro) {
     echo $OUTPUT->box(format_module_intro('jitsi', $jitsi, $cm->id), 'generalbox mod_introbox', 'jitsiintro');
 }
 
+
 $nom=$USER->username;
-$ses=$course->shortname."-".$jitsi->name;
-$urlSes=$CFG->wwwroot.'/mod/jitsi/sesion.php?nom='.$nom.'&ses='.$ses;
+$avatar=$CFG->wwwroot.'/user/pix.php/'.$USER->id.'/f1.jpg';
+
+$urlparams = array('avatar' => $avatar,'nom' => $USER->username, 'ses'=>$course->shortname."-".$jitsi->name);
 
 $today = getdate();
 

@@ -7,9 +7,7 @@
         <?php
           $nombre=$_POST['nom'];
           $sesion=$_POST['ses'];
-          $userid=$_POST['userid'];
-          
-          $avatar="http://localhost/moodle/user/pix.php/".$userid."/f1.jpg";
+          $avatar=$_POST['avatar']
          ?>
         <script src="https://meet.jit.si/external_api.js"></script>
         <script>
@@ -20,7 +18,6 @@
             var api = new JitsiMeetExternalAPI(domain, options);
             api.executeCommand('displayName', '<?php echo $nombre; ?>');
             api.executeCommand('toggleVideo');
-            //api.executeCommand('avatarUrl', 'http://localhost/moodle/user/pix.php/3/f1.jpg');
             api.executeCommand('avatarUrl', '<?php echo $avatar; ?>');
 
 
