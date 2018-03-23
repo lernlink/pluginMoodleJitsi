@@ -93,7 +93,7 @@ $today = getdate();
 if ($today[0]>($jitsi->timeopen-1800)){
   echo $OUTPUT->box(get_string('instruction', 'jitsi'));
 
-  echo $OUTPUT->single_button(new moodle_url('/mod/jitsi/sesion.php', $urlparams), get_string('access', 'jitsi'), 'post}}');
+  echo $OUTPUT->single_button(new moodle_url('/mod/jitsi/sesion.php', $urlparams), get_string('access', 'jitsi'), 'post');
 }else{
   echo $OUTPUT->box(get_string('nostart', 'jitsi'));
 }
