@@ -87,7 +87,7 @@ if ($jitsi->intro) {
 $nom=$USER->username;
 $avatar=$CFG->wwwroot.'/user/pix.php/'.$USER->id.'/f1.jpg';
 
-$urlparams = array('avatar' => $avatar,'nom' => $USER->username, 'ses'=>$course->shortname."-".$jitsi->name);
+$urlparams = array('avatar' => $avatar,'nom' => $USER->username, 'ses'=>$jitsi->name);
 
 $today = getdate();
 

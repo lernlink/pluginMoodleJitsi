@@ -6,12 +6,12 @@
     <body>
         <?php
           $nombre=$_POST['nom'];
-          $sesion=$_POST['ses'];
+          $sesion=str_replace(' ', '', $_POST['ses']);
           $avatar=$_POST['avatar']
          ?>
         <script src="https://meet.jit.si/external_api.js"></script>
         <script>
-            var domain = "meet.jit.si";
+            var domain = "35.187.85.40";
             var options = {
                 roomName: "<?php echo $sesion; ?>",
             }
@@ -19,8 +19,6 @@
             api.executeCommand('displayName', '<?php echo $nombre; ?>');
             api.executeCommand('toggleVideo');
             api.executeCommand('avatarUrl', '<?php echo $avatar; ?>');
-
-
         </script>
     </body>
 </html>
